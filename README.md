@@ -28,10 +28,10 @@ As go plugins can be finicky to correctly compile and install, you may want to c
 > cd go-ipfs
 
 # Pull in the datastore plugin (you can specify a version other than latest if you'd like).
-> go get github.com/ipfs/go-ds-s3/plugin@latest
+> go get github.com/numbersprotocol/go-ds-s3/plugin@latest
 
 # Add the plugin to the preload list.
-> echo "s3ds github.com/ipfs/go-ds-s3/plugin 0" >> plugin/loader/preload_list
+> echo "s3ds github.com/numbersprotocol/go-ds-s3/plugin 0" >> plugin/loader/preload_list
 
 # ( this first pass will fail ) Try to build go-ipfs with the plugin
 > make build
