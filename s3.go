@@ -119,9 +119,9 @@ func (s *S3Bucket) Sync(ctx context.Context, prefix ds.Key) error {
 }
 
 func (s *S3Bucket) Get(ctx context.Context, k ds.Key) ([]byte, error) {
-	fmt.Println("AWS S3 Root Path", aws.String(s.RootDirectory))
-	fmt.Println("AWS S3 Key", aws.String(k.String()))
-	fmt.Println("AWS S3 Root Path + Key", aws.String(s.s3Path(k.String())))
+	fmt.Println("AWS S3 Root Path", s.RootDirectory)
+	fmt.Println("AWS S3 Key", k.String())
+	fmt.Println("AWS S3 Root Path + Key", s.s3Path(k.String()))
 	resp, err := s.S3.GetObjectWithContext(ctx, &s3.GetObjectInput{
 		Bucket: aws.String(s.Bucket),
 		Key:    aws.String(s.s3Path(k.String())),
